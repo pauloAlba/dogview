@@ -1,0 +1,234 @@
+/*
+    cinza escuro: D3D3D3
+*/
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+}
+
+.personalizacaoContainer{
+    display: grid;
+    background-color: #b6b6b6;
+    grid-template-columns: 30vw 40vw;
+    grid-template-rows: 6vh 30vh 20vh 20vh 10vh;
+    grid-template-areas: 
+    "titulo titulo"
+    "personalizacao foto"
+    "personalizacao2 foto"
+    "personalizacao2 foto"
+    "personalizacao2 menu";
+}
+@media (max-width: 35em) {
+    .personalizacaoContainer{
+        display: grid;
+        background-color: #D3D3D3;
+        grid-template-columns: 100vw;
+        grid-template-rows: 20vh 6vh 28vh 40vh 6vh;
+        grid-template-areas: 
+        "foto"
+        "titulo"
+        "personalizacao"
+        "personalizacao2"
+        "menu";
+    }
+}
+
+.titulo{
+    display: flex;
+    grid-area: titulo;
+    background-image: linear-gradient(90deg, rgb(228, 228, 228), white);
+    justify-content: center;  
+    align-items: center;
+
+}
+
+.personalizacao{
+    grid-area: personalizacao;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    background-color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 10px 10px 0 10px;
+    padding-bottom: 5%;
+    z-index: 1;
+}
+.containerBTN{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+    padding: 1%;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 10px 10px 0 10px;
+    text-align: center;
+}
+
+.personalizacao2{
+    grid-area: personalizacao2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    background-color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    margin: 10px;
+    padding-bottom: 5%;
+    z-index: 1;
+}
+
+input{
+    height: 10%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(228, 228, 228);
+    padding: 5%;
+    
+}
+.image{
+    display: flex;
+    grid-area: foto;
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.dogview{
+    position: absolute;
+    width: 60%;
+
+}
+.oculos{
+    position: absolute;
+    width: 60%;
+}
+.menu{
+    grid-area: menu;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.btnAvancar{
+    border: none;
+    border-radius: 10px;
+    padding: 2%;
+    margin: 5px 5px;
+    font-size: 20px;
+}
+.btnVoltar{
+    border: none;
+    border-radius: 10px;
+    padding: 2%;
+    margin: 5px 5px;
+    font-size: 14px;
+}
+.btn{
+    transition: .3s;
+}
+.btn:hover{
+    border: solid 1px blueviolet;
+    box-shadow: 2px 2px 5px blueviolet;
+}
+.btn:active{
+    color: blueviolet;
+    background-color: white;
+
+}
+.cores{
+    justify-content: space-between;
+}
+
+.colorBTN{
+    margin: 2px;
+    padding: 4%;
+    width: 70px;
+}
+.colorBTN:active{
+    opacity: 0.5;
+}
+@media (max-width: 60em) {
+    .colorBTN{
+        padding: 2%;
+    }
+    
+}
+.rosa{
+    background-color: pink;
+    border: none;
+    border-radius: 10px;
+    
+}
+.branco{
+    background-color: rgb(209, 209, 209);
+    border: none;
+    border-radius: 10px;
+    
+}
+.verde{
+    background-color: rgb(220, 255, 192);
+    border: none;
+    border-radius: 10px;
+    
+}
+.azul{
+    background-color: rgb(192, 230, 255);
+    border: none;
+    border-radius: 10px;
+    
+}
+.cinza{
+    background-color: rgb(97, 97, 97);
+    border: none;
+    border-radius: 10px;
+    
+}
+.amarelo{
+    background-color: rgb(255, 254, 169);
+    border: none;
+    border-radius: 10px;
+}
+.lilas{
+    background-color: rgb(192, 169, 255);
+    border: none;
+    border-radius: 10px;
+}
+
+h3{
+    display: flex;
+    grid-area: titulo;
+    background-image: linear-gradient(90deg, rgb(228, 228, 228), white);
+    justify-content: center;  
+    align-items: center;
+    border-radius: 10px 0;
+    padding: 2%;
+}
+
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    .image * {
+      visibility: visible;
+    }
+    .image {
+      position: relative;
+      left: 0;
+      top: 600px;
+    }
+    .image {
+        transform: scale(4);
+      }
+  }
